@@ -9,7 +9,10 @@
     Rewrite this to make it *loop* through all the lecturers' names. 
     (Note the ES6 'template literal' syntax):
   */
-  let theData =  `${obj.lecturers[1].firstName} ${obj.lecturers[1].lastName}`;
+  let theData = "";
+  for(key in obj.lecturers) {
+  theData += `<li>${obj.lecturers[key].firstName} ${obj.lecturers[key].lastName} 
+  ${obj.lecturers[key].roomNumber} <a href="${obj.lecturers[key].DMUWebpage}">Contact Details</a> </li>`; }
   
   // populates the chosen element's content with the data:
   demoData.innerHTML = theData; 
